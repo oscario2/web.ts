@@ -1,0 +1,9 @@
+{
+    "name": "web.ts",
+    "version": "0.0.1",
+    "type": "module",
+    "scripts": {
+        "web": "deno run --allow-net tests/web.test.ts",
+        "all": "npm run web"
+    }
+}

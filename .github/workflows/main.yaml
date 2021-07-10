@@ -1,0 +1,17 @@
+name: web.ts
+on:
+    push:
+        branches: [ master ]
+    pull_request:
+        branches: [ master ]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        container:
+            image: denoland/deno:1.11.2
+
+        steps:
+        - uses: actions/checkout@v2
+        - run: deno cache deps.ts
+        - run: deno run --allow-net tests/web.test.ts
